@@ -1,0 +1,27 @@
+<div class="login-container">
+  <mat-card class="login-card">
+    <mat-card-header>
+      <mat-card-title>Iniciar Sesión</mat-card-title>
+      <mat-card-subtitle>Bienvenido, por favor ingresa tus credenciales</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <form (submit)="login(username.value, password.value)">
+        <mat-form-field appearance="fill">
+          <mat-label>Usuario</mat-label>
+          <input matInput #username type="text" placeholder="Ingresa tu usuario">
+          <mat-icon matPrefix>person</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Contraseña</mat-label>
+          <input matInput #password type="password" placeholder="Ingresa tu contraseña">
+          <mat-icon matPrefix>lock</mat-icon>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="login-button" type="submit">Ingresar</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+

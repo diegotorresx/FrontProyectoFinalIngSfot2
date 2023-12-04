@@ -1,0 +1,50 @@
+.alertas-container {
+  display: flex;
+  flex-direction: column; /* Mantiene las alertas apiladas verticalmente */
+  align-items: center;    /* Centra horizontalmente */
+  justify-content: center;/* Centra verticalmente */
+  height: 100vh;          /* Ocupa todo el alto de la ventana del navegador */
+  padding: 20px;          /* Agrega algo de espacio alrededor */
+}
+
+.alert-card {
+  width: 80%;             /* Hace que las tarjetas sean más anchas */
+  max-width: 600px;       /* Establece un máximo para que no sean demasiado anchas */
+  margin: 15px 0;         /* Aumenta el margen para mejor separación */
+  background-color: #ff5252; /* Un rojo más vivo y elegante */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada para el relieve */
+  border-radius: 15px;    /* Bordes más redondeados */
+  border: 1px solid #ff8080; /* Borde suave y de color complementario */
+  transition: transform 0.3s ease-in-out; /* Agrega una transición suave */
+  padding: 10px; /* Añade algo de espacio interno */
+}
+
+/* Efecto al pasar el mouse sobre la tarjeta */
+.alert-card:hover {
+  transform: scale(1.05); /* Ligeramente más grande al pasar el mouse */
+}
+
+.card-columns {
+  display: flex; /* Habilita Flexbox */
+  justify-content: center; /* Centra el contenido */
+  align-items: flex-start; /* Alinea los elementos al inicio */
+  gap: 10px; /* Espacio entre las columnas */
+}
+
+.column {
+  flex: 1; /* Cada columna ocupa una parte igual del espacio disponible */
+  min-width: 0; /* Evita que el texto se salga del contenedor */
+}
+
+/* Estilos para el título y subtítulo */
+mat-card-title, mat-card-subtitle {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo responsive para tamaños de pantalla pequeños */
+@media only screen and (max-width: 600px) {
+  .alert-card {
+    width: 100%;          /* Ajusta el ancho al 100% para pantallas pequeñas */
+  }
+}

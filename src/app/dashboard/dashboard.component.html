@@ -1,0 +1,35 @@
+<div class="dashboard-container">
+  <!-- Selector de Plantas -->
+  <div class="plant-selector">
+    <label for="plantSelect">Seleccione una Planta:</label>
+    <select id="plantSelect" [(ngModel)]="selectedPlantId" (change)="onPlantIdChange($event)">
+      <option *ngFor="let id of plantIds" [value]="id">{{ id }}</option>
+    </select>
+  </div>
+
+  <!-- Diagrama de Torta para la Humedad -->
+  <div class="pie-chart">
+    <canvas baseChart
+            [datasets]="pieChartData"
+            [labels]="['Humedad']"
+            [type]="pieChartType">
+    </canvas>
+  </div>
+
+  <!-- Diagrama de Barras para la Humedad -->
+  <div class="bar-chart">
+    <canvas baseChart
+            [datasets]="barChartData"
+            [labels]="['Humedad']"
+            [options]="barChartOptions"
+            [type]="barChartType">
+    </canvas>
+  </div>
+
+  <!-- Campos numéricos para los últimos valores de humedad -->
+  <div class="numeric-items">
+    <div *ngFor="let item of numericItems" class="numeric-item">
+      <strong>{{ item.label }}:</strong> {{ item.value }}
+    </div>
+  </div>
+</div>

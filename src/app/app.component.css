@@ -1,0 +1,53 @@
+/* Define tus colores en las variables para un mejor manejo */
+:root {
+  --color-primary: #1976d2; /* Un azul intenso */
+  --color-primary-dark: #115293; /* Un azul más oscuro para efectos de hover o activo */
+  --color-primary-light: #4791db; /* Un azul más claro para efectos de resaltado */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr; /* 'auto' para el toolbar y el espacio restante para el content */
+  height: 100vh;
+  margin: 0;
+}
+
+.toolbar {
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* permite desplazamiento vertical si el contenido supera la altura */
+  height: calc(100vh - 60px); /* 100vh es la altura total de la pantalla, y 60px es la altura de .toolbar */
+}
+
+.sidenav-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* ocupa todo el espacio disponible dentro de .content */
+}

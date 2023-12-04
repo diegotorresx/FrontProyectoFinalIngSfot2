@@ -1,0 +1,39 @@
+<h2 mat-dialog-title>Historia Clínica de {{ data.nombre }}</h2>
+
+<mat-dialog-content class="historia-content">
+
+  <!-- Datos Personales -->
+  <div class="seccion">
+    <h3>Datos Personales</h3>
+    <p><strong>Nombre:</strong> {{ data.nombre }}</p>
+    <p><strong>Fecha de reporte:</strong> {{ data.fechaReporte }}</p>
+    <p><strong>specie:</strong> {{ data.specie }}</p>
+    <p><strong>Edad:</strong> {{ data.age }}</p>
+    <!-- Agrega más campos si es necesario -->
+  </div>
+
+  <!-- Antecedentes -->
+  <div class="seccion">
+    <h3>Antecedentes</h3>
+    <p>{{ data.description }}</p>
+  </div>
+
+  <!-- Diagnóstico -->
+  <div class="seccion">
+    <h3>Diagnóstico</h3>
+    <p>{{ data.enfermedad }}</p>
+  </div>
+
+  <!-- Tratamiento -->
+  <div class="seccion">
+    <h3>Tratamiento</h3>
+    <p>{{ data.tratamiento }}</p>
+  </div>
+
+  <!-- Otras secciones según lo que necesites... -->
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cerrar</button>
+</mat-dialog-actions>

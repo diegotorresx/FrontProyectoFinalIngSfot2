@@ -1,0 +1,28 @@
+<header class="toolbar">
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <!-- Otros elementos del toolbar si los hay -->
+  
+    <!-- Espaciador para empujar el botón hacia la derecha -->
+    <span class="spacer"></span>
+  
+    <!-- Botón de inicio de sesión con ícono -->
+    <button mat-icon-button (click)="abrirLogin()">
+      <mat-icon>login</mat-icon> <!-- Reemplaza 'login' con el ícono de tu elección -->
+    </button>
+  </mat-toolbar>
+</header>
+
+<main class="content">
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav class="sidenav">
+      <app-menu-desplegable></app-menu-desplegable>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <!-- Contenido principal de la aplicación se renderiza aquí -->
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</main>

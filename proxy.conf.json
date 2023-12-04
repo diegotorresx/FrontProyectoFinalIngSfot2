@@ -1,0 +1,8 @@
+{
+  "/Plantas": {
+    "target": "https://uaj93qz5m8.execute-api.us-east-2.amazonaws.com",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": { "^/Plantas": "" }
+  }
+}

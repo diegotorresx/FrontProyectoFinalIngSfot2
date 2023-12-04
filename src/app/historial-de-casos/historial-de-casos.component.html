@@ -1,0 +1,40 @@
+<div class="tabla-contenedor">
+  <div class="buscador">
+    <mat-form-field appearance="fill">
+      <mat-label>Buscar</mat-label>
+      <input matInput (keyup)="aplicarFiltroEvento($event)">
+    </mat-form-field>
+  </div>
+  <div class="mat-table-responsive">
+    <table mat-table [dataSource]="datos" class="mat-elevation-z8" matSort>
+
+      <!-- ID Sensor -->
+      <ng-container matColumnDef="ID_SENSOR">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID Sensor </th>
+        <td mat-cell *matCellDef="let elemento"> {{elemento.ID_SENSOR}} </td>
+      </ng-container>
+
+      <!-- Valor -->
+      <ng-container matColumnDef="VALOR">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Valor </th>
+        <td mat-cell *matCellDef="let elemento"> {{elemento.VALOR}} </td>
+      </ng-container>
+
+      <!-- Fecha -->
+      <ng-container matColumnDef="FECHA">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
+        <td mat-cell *matCellDef="let elemento"> {{elemento.FECHA}} </td>
+      </ng-container>
+
+      <!-- ID Planta -->
+      <ng-container matColumnDef="ID_PLANTA">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID Planta </th>
+        <td mat-cell *matCellDef="let elemento"> {{elemento.ID_PLANTA}} </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="columnasMostradas"></tr>
+      <tr mat-row *matRowDef="let row; columns: columnasMostradas;"></tr>
+    </table>
+  </div>
+</div>
+

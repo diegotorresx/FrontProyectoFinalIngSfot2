@@ -1,0 +1,14 @@
+<div class="alertas-container">
+  <mat-card class="alert-card" *ngFor="let alerta of alertas">
+    <div class="card-columns">
+      <div class="column">
+        <mat-card-title>Alerta de Humedad</mat-card-title>
+        <mat-card-subtitle>{{ alerta.fechaHora | date: 'medium' }}</mat-card-subtitle>
+      </div>
+      <div class="column">
+        <p><strong>ID Planta:</strong> {{ alerta.especie }}</p>
+        <p><strong>Ubicación:</strong> {{ alerta.ubicacion }}</p>
+      </div>
+    </div>
+  </mat-card>
+</div>

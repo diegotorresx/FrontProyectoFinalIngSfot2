@@ -1,0 +1,57 @@
+.form-container {
+  display: flex;
+  justify-content: center;  /* Centra el contenido horizontalmente */
+  align-items: center;      /* (Opcional) Centra el contenido verticalmente */
+  height: 100vh;            /* (Opcional) Establece la altura al 100% de la altura de la ventana */
+  max-width: 75%; /* Mantiene el ancho del contenedor al 75% como se mencionó anteriormente */
+  margin: 40px auto; /* Centra el contenedor en la página y da un margen vertical */
+  padding: 100px 30px; /* 40px de espaciado en la parte superior e inferior y 20px en los lados */
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);  /* Mantiene la sombra sutil */
+
+}
+
+.form-title {
+  margin-bottom: 30px;
+  text-align: center;
+  color: #2a3f5f; /* Un tono de azul más oscuro y elegante */
+  margin-bottom: 20px;
+}
+
+.field-with-icon mat-icon {
+  color: #2a3f5f; /* Color de los íconos de huella a juego con el tema */
+}
+
+.historia-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 80%;               /* Establece el ancho del formulario al 75% del contenedor */
+  padding: 50px 50px;       /* Aumenta el padding superior e inferior */
+  margin-top: 40px;         /* Agrega un margen superior para alejarlo de la barra de navegación */
+  border-radius: 8px;       /* Añade esquinas redondeadas */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil */
+  background-color: rgba(255, 105, 97, 0.5);
+}
+/* Personaliza el color de las etiquetas y de las líneas de los campos */
+.mat-form-field-appearance-fill .mat-form-field-label {
+  color: #2a3f5f; /* Azul elegante */
+}
+
+.mat-form-field-appearance-fill .mat-form-field-underline::before {
+  background-color: #2a3f5f; /* Azul elegante */
+}
+
+/* Personaliza el color de los campos cuando están activos */
+.mat-form-field-appearance-fill.mat-focused .mat-form-field-label {
+  color: #FFC107;  /* Color secundario (ámbar) */
+}
+
+.mat-form-field-appearance-fill.mat-focused .mat-form-field-underline::after {
+  background-color: #FFC107;  /* Color secundario (ámbar) */
+}
+
+/* Personaliza el color de los checkbox */
+.mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #FFC107;  /* Color secundario (ámbar) */
+}

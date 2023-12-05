@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-login',
@@ -8,15 +10,34 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private authService: AuthService, private router: Router) {}
+
+  loginForm: FormGroup;
+
+  constructor(private authService: AuthService, private formBuilder: FormBuilder, private router: Router) {
+
+    this.loginForm = this.formBuilder.group({
+      email: ['carlos.blanco.amortegui@gmail.com', [Validators.required, Validators.email]],
+      password: ['12345678', [Validators.required]],
+      remember: [false]
+    });
+  }
 
   login(username: string, password: string) {
-    this.authService.login(username, password, (success) => {
-      if (success) {
-        this.router.navigate(['/ruta-protegida']);
-      } else {
-        // Manejar error de inicio de sesión
-        // Por ejemplo, mostrar un mensaje de error al usuario
+
+    console.log(this.loginForm.value)
+
+    if (this.loginForm.invalid) {
+      return;
+
+    }
+
+    this.authService.login(username, password).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.router.navigateByUrl('/');
+      },
+      error: (err) => {
+        Swal.fire('Error', err, 'error')
       }
     });
   }

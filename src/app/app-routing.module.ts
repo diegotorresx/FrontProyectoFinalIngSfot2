@@ -5,14 +5,16 @@ import { MapaDeCalorComponent } from './mapa-de-calor/mapa-de-calor.component';
 import { HistorialDeCasosComponent } from './historial-de-casos/historial-de-casos.component';
 import { HistoriaClinicaComponent } from './historia-clinica/historia-clinica.component';
 import { AlertasComponent } from './alertas/alertas.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'mapa-de-calor', component: MapaDeCalorComponent },
-  { path: 'historial-de-casos', component: HistorialDeCasosComponent },
-  { path: 'historia-clinica', component: HistoriaClinicaComponent },
-  { path: 'alertas', component: AlertasComponent },
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // Ruta por defecto
+  
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] }, 
+  { path: 'mapa-de-calor', component: MapaDeCalorComponent , canActivate: [AuthGuard]},
+  { path: 'historial-de-casos', component: HistorialDeCasosComponent , canActivate: [AuthGuard]},
+  { path: 'historia-clinica', component: HistoriaClinicaComponent , canActivate: [AuthGuard]},
+  { path: 'alertas', component: AlertasComponent , canActivate: [AuthGuard]},
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full'}, // Ruta por defecto
 ];
 
 @NgModule({
